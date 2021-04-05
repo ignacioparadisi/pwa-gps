@@ -19,19 +19,19 @@ export class Tab2Page {
       const coordinates = await Geolocation.getCurrentPosition();
       this.coordinates.push(coordinates.coords);
     } catch(err) {
-      console.log(err);
+      this.presentAlert(err);
     }
   }
 
-  // async presentAlert(error: any) {
-  //   const alert = await this.alertController.create({
-  //     header: 'Error',
-  //     subHeader: 'Subtitle',
-  //     message: 'This is an alert message.',
-  //     buttons: ['OK']
-  //   });
+  async presentAlert(error: any) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      subHeader: 'Subtitle',
+      message: error.message,
+      buttons: ['OK']
+    });
 
-  //   await alert.present();
-  // }
+    await alert.present();
+  }
 
 }
