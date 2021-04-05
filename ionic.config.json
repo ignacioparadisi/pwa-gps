@@ -1,0 +1,7 @@
+{
+  "name": "pwa-gps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
