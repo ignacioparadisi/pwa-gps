@@ -13,5 +13,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <h1>Geolocation</h1>
+  <ion-list>
+    <ion-card *ngFor="let coordinate of coordinates">
+        <ion-card-header>
+          <ion-card-subtitle>GET COORDINATES</ion-card-subtitle>
+          <ion-card-title>Geolocation</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          Latitude: {{ coordinate?.latitude }} <br>
+          Longitude: {{ coordinate?.longitude }} <br>
+          Accuracy: {{ coordinate?.accuracy }}m
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
+
+  <ion-button expand="block" (click)="locate()">Locate</ion-button>
+
 </ion-content>
