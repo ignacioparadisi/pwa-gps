@@ -30,7 +30,6 @@ export class Tab2Page {
       message: error.message,
       buttons: ['OK']
     });
-
     await alert.present();
   }
 
